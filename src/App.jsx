@@ -1,35 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { Page } from "./components/CustomTags";
+import NavBar from "./components/NavBar";
+import bgImage from "./assets/images/white-background-1.jpg";
+import DigtalClock_One from "./clock/DigtalClock_One";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Page className=" fixed top-0 left-0 w-screen h-screen pt-5 pb-10 bg-[#fafafa] ">
+      <section className=" relative w-full h-full max-w-[1000px] mx-auto ">
+        <NavBar />
+
+        <main className=" w-full h-full flex items-center justify-center">
+          <DigtalClock_One />
+        </main>
+      </section>
+    </Page>
+  );
 }
 
-export default App
+export default App;
