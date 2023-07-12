@@ -1,21 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Box } from "./CustomTags";
+import "../App.css";
+import { PageContext } from "../Context";
 
 export default function NavBar() {
+  const { setting, setSetting, theme, setTheme } = useContext(PageContext);
+
+  function Toggle() {
+    setSetting(!setting);
+    console.log(setting);
+  }
+
   return (
-    <nav className=" absolute top-0 left-0 w-full flex justify-between items-center ">
+    <nav
+      className={` absolute navbar top-0 left-0 w-full flex justify-between pt-5 z-10 `}
+    >
       <p
-        className=" w-fit py-[10px] px-[4%] rounded-md text-[18px] bg-white"
-        style={{
-          boxShadow:
-            "rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px",
-        }}
+        className=" w-fit py-[5px] pl-[20px] rounded-md  "
+        style={{ fontSize: "1.2em" }}
       >
         Clock Display
       </p>
 
-      <Box className=" menu">
-        <i className=" menu_indicator relative block w-[30px] h-[2px] bg-gray-900 rounded-md "></i>
+      <Box
+        className={` menu cursor-pointer ${
+          theme === "Dark" && " bg-[#0a2431] "
+        } `}
+        onClick={Toggle}
+      >
+        <span
+          className={` menu_indicator ${theme === "Dark" && " bg-[#fafafa]"} `}
+        ></span>
       </Box>
     </nav>
   );

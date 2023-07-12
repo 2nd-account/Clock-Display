@@ -1,6 +1,93 @@
 @import url("https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
-nav {
-  font-family: "Raleway";
+* {
+  font-family: "Raleway", sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  transition: color, background-color 1s;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  padding: 0px 8px;
+  border-radius: 50%;
+  background-color: white;
+  /* box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px; */
+}
+
+.menu_indicator {
+  position: relative;
+  display: block;
+  width: 25px;
+  height: 1px;
+  border-radius: 1px;
+  background-color: rgb(64, 63, 63);
+  display: flex;
+  justify-content: center;
+}
+
+.menu_indicator::before,
+.menu_indicator::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: inherit;
+  background-color: inherit;
+  border-radius: inherit;
+}
+
+.menu_indicator::before {
+  top: -6px;
+}
+
+.menu_indicator::after {
+  bottom: -6px;
+}
+
+.settings {
+  /* transition: color, background-color 0.3s; */
+  transition: width 0.3s;
+  background-color: #f5f5f5;
+}
+
+.date-display {
+  font-size: 1em;
+  font-family: "Poppins";
+}
+
+.clock-display {
+  font-family: "Poppins";
+  display: flex;
+  align-items: center;
+}
+
+.divider {
+  font-size: 2em;
+  font-weight: 400;
+  font-family: "Courier New";
+}
+
+.hour-span,
+.minute-span,
+.second-span {
+  font-family: "Poppins";
+  font-size: 2.1em;
+  font-weight: 300;
+  width: 2ch;
+  text-align: center;
+}
+
+.mili-span {
+  margin-left: 7px;
+  border: 1px solid rgb(174, 173, 173);
+  border-radius: 50%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
