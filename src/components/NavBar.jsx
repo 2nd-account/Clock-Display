@@ -24,12 +24,18 @@ export default function NavBar() {
 
       <Box
         className={` menu cursor-pointer ${
-          theme === "Dark" && " bg-[#0a2431] "
+          theme === "Dark" && " bg-[rgb(10,36,49)] "
+        }  ${
+          theme === "System" && " bg-[rgb(255,255,255)] dark:bg-[rgb(10,36,49)]"
         } `}
         onClick={Toggle}
       >
         <span
-          className={` menu_indicator ${theme === "Dark" && " bg-[#fafafa]"} `}
+          className={` menu_indicator ${
+            theme === "Dark" && " bg-[rgb(250,250,250)]"
+          } ${
+            theme === "System" && " dark:bg-[rgb(250,250,250)] bg-[rgb(0,0,0)]"
+          } `}
         ></span>
       </Box>
     </nav>

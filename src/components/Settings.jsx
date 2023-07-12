@@ -27,14 +27,16 @@ function Settings() {
           className={`${
             setting ? "sm:w-full md:w-[300px] " : " sm:w-0 md:w-0 "
           } settings absolute top-0 right-0  h-full z-20 overflow-hidden pt-5 ${
-            theme === "Dark" && " bg-[#061822]"
-          } ${theme === "System" && "bg-[#f5f5f5] dark:bg-[#061822]"} `}
+            theme === "Dark" && " bg-[rgb(6,24,34)]"
+          } ${
+            theme === "System" && "bg-[rgb(245,245,245)] dark:bg-[rgb(6,24,34)]"
+          } `}
         >
           <section className=" flex ">
             <div
               onClick={Toggle}
               className={` w-fit text-gray-700 bg-white rounded-md mx-[20px] text-center cursor-pointer ${
-                theme === "Dark" && " bg-[#062c41] text-[#fafafa]"
+                theme === "Dark" && " bg-[rgb(6,44,65)] text-[rgb(250,250,250)]"
               } ${
                 theme === "System" &&
                 "bg-[#f5f5f5] dark:bg-[#062c41] dark:text-[#fafafa]"
@@ -57,8 +59,10 @@ function Settings() {
                 <div
                   key={index.name}
                   className={` flex items-center gap-2 rounded-md cursor-pointer bg-white ${
-                    theme === "Dark" && "bg-[#0a2431]"
-                  }  ${theme === "System" && "bg-[#fff] dark:bg-[#0a2431] "} `}
+                    theme === "Dark" && " bg-[rgb(10,36,49)] "
+                  }  ${
+                    theme === "System" && "bg-[#fff] dark:bg-[rgb(10,36,49)] "
+                  } `}
                   style={{ padding: ".3em 1em" }}
                   onClick={() => themeLocalStorage(index.name)}
                 >
