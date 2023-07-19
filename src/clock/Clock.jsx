@@ -5,7 +5,7 @@ const ClockIndex = lazy(() => import("./ClockIndex"));
 function Clock() {
   return (
     <div>
-      <Suspense fallback={<p>Loading Clock...</p>}>
+      <Suspense fallback={<p>Loading Clock... </p>}>
         <ClockIndex />
       </Suspense>
     </div>
